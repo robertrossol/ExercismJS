@@ -7,7 +7,7 @@ var reverseString = function (input) {
   while (broken.length > 0) {
     final.push(broken.splice(-1))
   }
-  return final
+  return final.join('')
 };
 
 module.exports = reverseString;
