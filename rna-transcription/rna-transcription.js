@@ -7,16 +7,14 @@ DnaTranscriber.prototype.toRna = function (input) {
   conversion['G'] = 'C';
   conversion['T'] = 'A';
   conversion['A'] = 'U';
-
-  // if (input delete('CGTA').isEmpty) {
-
+  if (input.replace(/C/g, '').replace(/G/g, '').replace(/T/g, '').replace(/A/g, '').split('').length > 0) {
+    throw Error('Invalid input');
+  }
   var rna = ''
   input.split('').forEach(function(nucleotide) {
     rna += conversion[nucleotide];
   });
   return rna
-
-
 };
 
 module.exports = DnaTranscriber;
